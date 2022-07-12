@@ -3,6 +3,6 @@ const app = express();
 const {getData} = require("../Controllers/api");
 
 
-app.get("/data", getData);
+app.get("/getTimeStories", getData);
 
 module.exports = app;
