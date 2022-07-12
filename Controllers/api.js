@@ -29,9 +29,7 @@ const getData = (req, res, next) => {
       const tittle = $('li[class="latest-stories__item"] a>h3').text();
       const link = $('li[class="latest-stories__item"] >a').attr("href");
 
-      //   const bookingURLs = $('a[class*="FlightsTicket_link"]')
-      //     .map((i, elem) => console.log(elem.href))
-      //     .get();
+    
 
       for (let i = 0; i < $('li[class="latest-stories__item"]').length; i++) {
         latestStories.push({
@@ -40,9 +38,7 @@ const getData = (req, res, next) => {
         });
       }
 
-      //   let data = {};
-      //   data.tittle = tittle;
-      //   data.link = link;
+     
       jsonfile.writeFileSync("data.json", latestStories, { spaces: 2 });
       return res.json({
         data: latestStories,
